@@ -1,0 +1,2625 @@
+
+/* =================================
+   IDENTITAS WARNA WEBSITE
+================================= */
+
+:root {
+    --navy: #000000;
+    --blue: #8B4513;
+    --gold: #DAA520;
+    --light: #F7F0E3;
+
+    --dark-text: #000000;
+    --soft-text: #655746;
+    --cream: #C0C0C0;
+    --white: #FFFFFF;
+
+    --bg-statistik: #F7F0E3;
+    --bg-video: #EAD8B8;
+    --bg-berita: #F1EDE5;
+}
+
+/* =================================
+   BODY
+================================= */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--light);
+    color: var(--dark-text);
+    margin: 0;
+}
+
+/* =================================
+   NAVBAR
+================================= */
+
+.navbar {
+    background-color: var(--navy);
+    padding: 10px 0;
+}
+
+.navbar-brand strong {
+    font-size: 50px;
+    color: white;
+}
+
+.navbar-brand small {
+    font-size: 20px;
+    color: #C0C0C0;
+}
+
+.navbar .nav-link {
+    color: white;
+    margin-left: 15px;
+    padding: 8px 18px !important;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    background-color: var(--gold);
+    color: #000000;
+}
+
+/* =================================
+   FOOTER
+================================= */
+
+.footer {
+    background-color: var(--navy);
+    color: white;
+    padding: 25px 0;
+    font-size: 13px;
+}
+
+/* =================================
+   RESPONSIVE NAVBAR
+================================= */
+
+@media (max-width: 991px) {
+    .navbar .nav-link {
+        margin: 5px 0;
+    }
+}
+
+/* =================================
+   HERO SECTION
+================================= */
+
+
+
+/* =========================================
+   HERO SECTION KOTA PALU
+   ANIMATED GRADIENT + EFEK OMBAK
+========================================= */
+
+.hero-section {
+    position: relative;
+    isolation: isolate;
+
+    background: linear-gradient(
+        120deg,
+        #8B4513,
+        #B87916,
+        #DAA520,
+        #F0BD32,
+        #8B4513
+    );
+
+    background-size: 300% 300%;
+    animation: gradientBergerak 12s ease infinite;
+
+    padding: 60px 0;
+    overflow: hidden;
+    color: #FFFFFF;
+}
+
+/* =========================================
+   ANIMASI GRADIENT
+========================================= */
+
+@keyframes gradientBergerak {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* =========================================
+   GELOMBANG PERTAMA
+========================================= */
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+
+    width: 200%;
+    height: 300px;
+    left: -50%;
+    top: -160px;
+
+    border-radius: 43%;
+
+    background: linear-gradient(
+        90deg,
+        rgba(255,255,255,0.02),
+        rgba(255,235,170,0.22),
+        rgba(255,255,255,0.08),
+        rgba(218,165,32,0.20)
+    );
+
+    animation: ombakPertama 12s linear infinite;
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* =========================================
+   GELOMBANG KEDUA
+========================================= */
+
+.hero-section::after {
+    content: "";
+    position: absolute;
+
+    width: 200%;
+    height: 300px;
+    left: -50%;
+    bottom: -180px;
+
+    border-radius: 43%;
+
+    background: linear-gradient(
+        90deg,
+        rgba(139,69,19,0.10),
+        rgba(255,235,170,0.22),
+        rgba(218,165,32,0.18),
+        rgba(255,255,255,0.05)
+    );
+
+    animation: ombakKedua 16s linear infinite;
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* =========================================
+   ANIMASI GELOMBANG
+========================================= */
+
+@keyframes ombakPertama {
+    0% {
+        transform: translateX(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateX(10%) rotate(180deg);
+    }
+
+    100% {
+        transform: translateX(0) rotate(360deg);
+    }
+}
+
+@keyframes ombakKedua {
+    0% {
+        transform: translateX(0) rotate(360deg);
+    }
+
+    50% {
+        transform: translateX(-10%) rotate(180deg);
+    }
+
+    100% {
+        transform: translateX(0) rotate(0deg);
+    }
+}
+
+/* =========================================
+   GARIS CAHAYA BERGELOMBANG
+========================================= */
+
+.hero-section .wave-line {
+    position: absolute;
+
+    left: -10%;
+    bottom: 15%;
+
+    width: 120%;
+    height: 120px;
+
+    border-top: 2px solid rgba(255,255,255,0.25);
+    border-radius: 50%;
+
+    transform: rotate(-5deg);
+
+    pointer-events: none;
+    z-index: -1;
+
+    animation: garisOmbak 7s ease-in-out infinite alternate;
+}
+
+@keyframes garisOmbak {
+    from {
+        transform: translateX(-3%) rotate(-5deg);
+    }
+
+    to {
+        transform: translateX(3%) rotate(5deg);
+    }
+}
+
+/* =========================================
+   KONTEN HERO
+========================================= */
+
+.hero-content {
+    padding: 30px;
+}
+.hero-content h1 span {
+    color: #000000;
+}
+.hero-label {
+    display: inline-block;
+    color: #C0C0C0;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #F5F5F5;
+    max-width: 500px;
+    margin-bottom: 25px;
+}
+
+
+/* =================================
+   TOMBOL PROFIL KOTA
+================================= */
+
+a.btn-hero {
+    display: inline-block !important;
+    background: #000000 !important;
+    color: #FFFFFF !important;
+
+    text-decoration: none !important;
+
+    padding: 12px 22px !important;
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    border: none;
+    transition: all 0.3s ease;
+}
+
+a.btn-hero:visited,
+a.btn-hero:focus,
+a.btn-hero:active {
+    background: #000000 !important;
+    color: #FFFFFF !important;
+    text-decoration: none !important;
+}
+
+a.btn-hero:hover {
+    background: #DAA520 !important;
+    color: #000000 !important;
+}
+
+a.btn-hero span {
+    margin-left: 10px;
+}
+
+
+
+/* =========================================
+   FOTO HERO
+========================================= */
+
+.hero-image {
+    padding: 20px;
+}
+
+.hero-image img {
+    display: block;
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* =========================================
+   RESPONSIVE HERO
+========================================= */
+
+@media (max-width: 991px) {
+
+    .hero-content {
+        padding: 20px 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-image img {
+        height: 280px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+
+    .hero-image img {
+        height: 230px;
+    }
+}
+
+
+/* =================================
+   STATISTIK KOTA PALU
+================================= */
+
+.statistics-section {
+    padding: 55px 0;
+    background-color: #F7F0E3;
+}
+
+/* JUDUL STATISTIK */
+
+.statistics-section .section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.statistics-section .section-heading h2 {
+    color: #8B4513;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.statistics-section .section-heading p {
+    color: #655746;
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+/* KARTU STATISTIK */
+
+.stat-card {
+    background-color: #FFFFFF;
+    padding: 25px 15px;
+    border-radius: 12px;
+    text-align: center;
+    height: 100%;
+    min-height: 115px;
+    box-shadow: 0 3px 12px rgba(80, 45, 15, 0.08);
+    transition: all 0.3s ease;
+}
+
+/* EFEK HOVER */
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(80, 45, 15, 0.15);
+}
+
+/* IKON */
+
+.stat-icon {
+    display: block;
+    font-size: 32px;
+    color: #DAA520;
+    margin-bottom: 10px;
+}
+
+/* ANGKA */
+
+.stat-card h3 {
+    color: #8B4513;
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+/* KETERANGAN */
+
+.stat-card p {
+    color: #655746;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+/* RESPONSIVE STATISTIK */
+
+@media (max-width: 576px) {
+    .statistics-section {
+        padding: 40px 0;
+    }
+
+    .statistics-section .section-heading h2 {
+        font-size: 23px;
+    }
+
+    .stat-card {
+        padding: 20px 10px;
+    }
+
+    .stat-icon {
+        font-size: 28px;
+    }
+
+    .stat-card h3 {
+        font-size: 23px;
+    }
+}
+
+/* =================================
+   BACKGROUND VIDEO KOTA PALU
+================================= */
+
+.hero-video-container {
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    min-height: 450px;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* VIDEO LATAR BELAKANG */
+
+.background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 100%;
+    height: 100%;
+
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+
+    z-index: 1;
+}
+
+/* OVERLAY GELAP */
+
+.video-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.45),
+        rgba(0, 0, 0, 0.60)
+    );
+
+    z-index: 2;
+}
+
+/* KONTEN VIDEO */
+
+.hero-video-content {
+    position: relative;
+    z-index: 3;
+
+    color: #FFFFFF;
+    padding: 30px;
+}
+
+.hero-video-label {
+    color: #DAA520;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.hero-video-content h1 {
+    font-size: 48px;
+    font-weight: 800;
+    margin: 15px 0;
+}
+
+.hero-video-content p {
+    color: #FFFFFF;
+    font-size: 18px;
+    margin-bottom: 28px;
+}
+
+/* TOMBOL */
+
+.btn-video {
+    display: inline-block;
+    padding: 13px 25px;
+
+    background: #DAA520;
+    color: #000000;
+
+    text-decoration: none;
+    border-radius: 7px;
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.btn-video:hover {
+    background: #FFFFFF;
+    color: #8B4513;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 576px) {
+
+    .hero-video-container {
+        height: 60vh;
+        min-height: 350px;
+    }
+
+    .hero-video-content h1 {
+        font-size: 32px;
+    }
+
+    .hero-video-content p {
+        font-size: 14px;
+    }
+
+}
+
+
+/* =================================
+   BERITA TERBARU
+================================= */
+
+.news-section {
+
+    padding: 65px 0;
+    background-color: #F1EDE5;
+}
+
+/* KARTU BERITA */
+
+.news-card {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 100%;
+
+    box-shadow: 0 4px 15px rgba(80, 45, 15, 0.10);
+    transition: 0.3s;
+}
+
+/* EFEK HOVER */
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 22px rgba(80, 45, 15, 0.16);
+}
+
+/* GAMBAR BERITA */
+
+.news-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+/* ISI KARTU */
+
+.news-content {
+    padding: 20px;
+}
+
+/* TANGGAL BERITA */
+
+.news-date {
+    display: inline-block;
+    color: #8B4513;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* JUDUL BERITA */
+
+.news-content h5 {
+    color: #000000;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+    min-height: 48px;
+    margin-bottom: 12px;
+}
+
+/* DESKRIPSI BERITA */
+
+.news-content p {
+    color: #655746;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+/* LINK BERITA */
+
+.news-link {
+    color: #8B4513;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.news-link:hover {
+    color: #DAA520;
+}
+
+/* TOMBOL SEMUA BERITA */
+
+.btn-news {
+    display: inline-block;
+    background-color: #000000;
+    color: white;
+    text-decoration: none;
+    padding: 11px 25px;
+    border-radius: 7px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-news:hover {
+    background-color: #DAA520;
+    color: #000000;
+}
+
+/* RESPONSIVE BERITA */
+
+@media (max-width: 576px) {
+    .news-card img {
+        height: 190px;
+    }
+
+    .news-content h5 {
+        font-size: 16px;
+        min-height: auto;
+    }
+}
+
+/* =================================
+   SAMBUTAN WALI KOTA PALU
+================================= */
+
+.welcome-section {
+    padding: 75px 0;
+    background: #FFFFFF;
+}
+
+.mayor-photo {
+    background: #F7F0E3;
+    padding: 12px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(80, 45, 15, 0.10);
+}
+
+.mayor-photo img {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 10px;
+}
+
+.welcome-label {
+    display: inline-block;
+    color: #8B4513;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.welcome-content h2 {
+    color: #000000;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.welcome-content h2 span {
+    color: #8B4513;
+}
+
+.welcome-subtitle {
+    color: #8B4513;
+    margin-bottom: 22px;
+}
+
+.welcome-content p {
+    color: #555555;
+    font-size: 15px;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.welcome-greeting {
+    color: #000000 !important;
+    font-weight: bold;
+}
+
+.mayor-signature {
+    border-left: 4px solid #DAA520;
+    padding-left: 15px;
+    margin-top: 25px;
+}
+
+.mayor-signature h5 {
+    color: #8B4513;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.mayor-signature span,
+.mayor-signature small {
+    display: block;
+    color: #555555;
+    margin-bottom: 4px;
+}
+
+.deputy-mayor {
+    color: #655746;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+/
+/* =================================
+   POTENSI DAN UNGGULAN DAERAH
+================================= */
+
+.potential-section {
+    padding: 65px 0;
+    background: linear-gradient(
+        135deg,
+        #F7F0E3,
+        #EFE2CC
+    );
+}
+
+/* =================================
+   JUDUL SECTION
+================================= */
+
+.potential-section .section-heading {
+    text-align: center !important;
+    margin-bottom: 40px;
+}
+
+.potential-section .section-heading h2 {
+    color: #8B4513 !important;
+    font-size: 32px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.potential-section .section-heading h2::after {
+    content: "";
+    display: block;
+    width: 75px;
+    height: 4px;
+    background: #DAA520;
+    border-radius: 10px;
+    margin: 13px auto 0;
+}
+
+.potential-section .section-heading p {
+    color: #655746 !important;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 12px;
+    margin-bottom: 0;
+}
+
+/* =================================
+   KARTU POTENSI
+================================= */
+
+.potential-section .potential-card {
+    background-color: #FFFFFF !important;
+    min-height: 190px;
+    padding: 30px 20px;
+    border-radius: 12px;
+    text-align: center !important;
+    height: 100%;
+    box-shadow: 0 4px 15px rgba(80, 45, 15, 0.08);
+    transition: all 0.3s ease;
+}
+
+/* EFEK HOVER */
+
+.potential-section .potential-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 22px rgba(80, 45, 15, 0.15);
+}
+
+/* IKON */
+
+.potential-section .potential-card i {
+    display: block;
+    font-size: 36px;
+    color: #DAA520 !important;
+    margin-bottom: 18px;
+}
+
+/* JUDUL KARTU */
+
+.potential-section .potential-card h5 {
+    color: #000000 !important;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* DESKRIPSI */
+
+.potential-section .potential-card p {
+    color: #655746 !important;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+/* =================================
+   RESPONSIVE POTENSI
+================================= */
+
+@media (max-width: 576px) {
+
+    .potential-section {
+        padding: 40px 0;
+    }
+
+    .potential-section .section-heading h2 {
+        font-size: 24px;
+    }
+
+    .potential-section .potential-card {
+        padding: 22px 15px;
+        min-height: 170px;
+    }
+
+    .potential-section .potential-card i {
+        font-size: 30px;
+    }
+
+}
+
+/* =================================
+   RESPONSIVE BAGIAN TAMBAHAN
+================================= */
+
+@media (max-width: 991px) {
+    .mayor-photo img {
+        height: 380px;
+    }
+
+    .welcome-content h2 {
+        font-size: 27px;
+    }
+}
+
+@media (max-width: 576px) {
+    .welcome-section,
+    .potential-section {
+        padding: 45px 0;
+    }
+
+    .mayor-photo img {
+        height: 350px;
+    }
+
+    .welcome-content h2 {
+        font-size: 24px;
+    }
+
+    .potential-card {
+        min-height: 170px;
+        padding: 25px 15px;
+    }
+}
+
+/* =================================
+   PARIWISATA DAN DESTINASI KOTA PALU
+================================= */
+
+.tourism-section {
+    padding: 70px 0;
+    background: linear-gradient(
+        135deg,
+        #F7F0E3,
+        #EFE2CC
+    );
+}
+
+/* LABEL JUDUL */
+
+.tourism-label {
+    display: inline-block;
+    color: #DAA520;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+/* KARTU DESTINASI */
+
+.tourism-card {
+    background-color: #FFFFFF;
+    border-radius: 14px;
+    overflow: hidden;
+    height: 100%;
+    box-shadow: 0 4px 15px rgba(80, 45, 15, 0.09);
+    transition: 0.3s;
+}
+
+.tourism-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(80, 45, 15, 0.17);
+}
+
+/* GAMBAR DESTINASI */
+
+.tourism-image {
+    position: relative;
+    width: 100%;
+    height: 230px;
+    overflow: hidden;
+}
+
+.tourism-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.tourism-card:hover .tourism-image img {
+    transform: scale(1.07);
+}
+
+/* LABEL KATEGORI */
+
+.tourism-category {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #DAA520;
+    color: #000000;
+    padding: 7px 13px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* KONTEN DESTINASI */
+
+.tourism-content {
+    padding: 22px;
+}
+
+.tourism-content h5 {
+    color: #8B4513;
+    font-size: 19px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.tourism-content p {
+    color: #655746;
+    font-size: 13px;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 18px;
+    min-height: 115px;
+}
+
+/* INFORMASI LOKASI */
+
+.tourism-location {
+    color: #777777;
+    font-size: 12px;
+    margin-bottom: 17px;
+}
+
+.tourism-location i {
+    color: #DAA520;
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+/* LINK LOKASI */
+
+.tourism-link {
+    display: inline-block;
+    background-color: #8B4513;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 10px 17px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.tourism-link:hover {
+    background-color: #DAA520;
+    color: #000000;
+}
+
+.tourism-link i {
+    margin-left: 5px;
+}
+
+/* KETERANGAN BAGIAN BAWAH */
+
+.tourism-footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 18px;
+    background-color: rgba(255, 255, 255, 0.65);
+    border-radius: 10px;
+}
+
+.tourism-footer p {
+    color: #655746;
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+.tourism-footer i {
+    color: #DAA520;
+    margin-right: 5px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 991px) {
+    .tourism-image {
+        height: 210px;
+    }
+
+    .tourism-content p {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .tourism-section {
+        padding: 45px 0;
+    }
+
+    .tourism-image {
+        height: 220px;
+    }
+
+    .tourism-content {
+        padding: 18px;
+    }
+
+    .tourism-content h5 {
+        font-size: 17px;
+    }
+}
+
+
+/* =================================
+   ANIMASI GRADASI DAN GELOMBANG
+   HERO PROFIL KOTA PALU
+================================= */
+
+/* GRADASI BERGERAK */
+
+.profile-hero {
+    background-size: 300% 300%;
+    animation: profileGradientMove 12s ease infinite;
+}
+
+@keyframes profileGradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* GELOMBANG PERTAMA */
+
+.profile-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.profile-hero::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 120%;
+    height: 150px;
+    left: -10%;
+    bottom: -85px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50% 50% 0 0;
+    animation: profileWaveOne 8s ease-in-out infinite alternate;
+}
+
+/* GELOMBANG KEDUA */
+
+.profile-hero::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 130%;
+    height: 170px;
+    left: -15%;
+    bottom: -110px;
+    background: rgba(255, 255, 255, 0.10);
+    border-radius: 50% 50% 0 0;
+    animation: profileWaveTwo 10s ease-in-out infinite alternate;
+}
+
+/* GERAK GELOMBANG */
+
+@keyframes profileWaveOne {
+    from {
+        transform: translateX(-3%) rotate(-3deg);
+    }
+
+    to {
+        transform: translateX(3%) rotate(3deg);
+    }
+}
+
+@keyframes profileWaveTwo {
+    from {
+        transform: translateX(3%) rotate(3deg);
+    }
+
+    to {
+        transform: translateX(-3%) rotate(-3deg);
+    }
+}
+
+/* KONTEN TETAP DI ATAS GELOMBANG */
+
+.profile-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 576px) {
+    .profile-hero::before {
+        height: 110px;
+        bottom: -75px;
+    }
+
+    .profile-hero::after {
+        height: 125px;
+        bottom: -90px;
+    }
+}
+
+/* =================================
+   GELOMBANG PROFIL LEBIH MENONJOL
+================================= */
+
+.profile-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.profile-hero::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 160%;
+    height: 260px;
+    left: -30%;
+    bottom: -150px;
+
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 45% 55% 0 0;
+
+    animation: ombakProfil 7s ease-in-out infinite alternate;
+}
+
+.profile-hero::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 160%;
+    height: 230px;
+    left: -30%;
+    bottom: -125px;
+
+    background: rgba(139, 69, 19, 0.20);
+    border-radius: 55% 45% 0 0;
+
+    animation: ombakProfilDua 9s ease-in-out infinite alternate;
+}
+
+/* LAPISAN GELOMBANG TAMBAHAN */
+
+.profile-hero .container::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 150%;
+    height: 210px;
+    left: -25%;
+    bottom: -155px;
+
+    background: rgba(255, 255, 255, 0.13);
+    border-radius: 50% 50% 0 0;
+
+    animation: ombakProfilTiga 11s ease-in-out infinite alternate;
+}
+
+@keyframes ombakProfil {
+    0% {
+        transform: translateX(-8%) rotate(-5deg);
+    }
+    100% {
+        transform: translateX(8%) rotate(5deg);
+    }
+}
+
+@keyframes ombakProfilDua {
+    0% {
+        transform: translateX(7%) rotate(5deg);
+    }
+    100% {
+        transform: translateX(-7%) rotate(-5deg);
+    }
+}
+
+@keyframes ombakProfilTiga {
+    0% {
+        transform: translateX(-5%) rotate(4deg);
+    }
+    100% {
+        transform: translateX(5%) rotate(-4deg);
+    }
+}
+
+.profile-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* =================================
+   HERO PROFIL KOTA PALU
+================================= */
+
+.profile-hero {
+    background: linear-gradient(
+        120deg,
+        #8B4513,
+        #DAA520,
+        #DAA520
+    );
+    padding: 10px 0;
+    color: #FFFFFF;
+}
+
+.profile-hero-content {
+    max-width: 500px;
+}
+
+.profile-eyebrow {
+    display: inline-block;
+    color: #F5F5F5;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    margin-bottom: 18px;
+}
+
+.profile-hero h1 {
+    font-size: 46px;
+    line-height: 1.2;
+    font-weight: 800;
+    margin-bottom: 18px;
+}
+
+.profile-hero h1 span {
+    color: #000000;
+}
+
+.profile-hero p {
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 650px;
+    color: #FFFFFF;
+    margin-bottom: 25px;
+}
+
+.profile-hero-btn {
+    display: inline-block;
+    background: #000000;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 12px 23px;
+    border-radius: 7px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.profile-hero-btn:hover {
+    background: #FFFFFF;
+    color: #8B4513;
+}
+
+
+
+/* =================================
+   GAMBARAN UMUM KOTA PALU
+================================= */
+
+.profile-overview {
+    padding: 65px 0;
+    background: #FFFFFF;
+}
+
+.overview-image {
+    background: #FFFFFF;
+    padding: 10px;
+    border-radius: 18px;
+    border: 1px solid #EFE2CC;
+    box-shadow: 0 10px 30px rgba(80, 45, 15, 0.12);
+    transition: 0.4s ease;
+}
+
+.overview-image:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(80, 45, 15, 0.18);
+}
+
+.overview-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* LABEL JUDUL */
+
+.profile-label {
+    display: inline-block;
+    color: #DAA520;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+/* JUDUL */
+
+.overview-content h2,
+.history-section h2 {
+    color: #8B4513;
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 22px;
+    position: relative;
+    padding-bottom: 13px;
+}
+
+.overview-content h2::after,
+.history-section h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 65px;
+    height: 4px;
+    border-radius: 10px;
+    background: linear-gradient(
+        90deg,
+        #8B4513,
+        #DAA520
+    );
+}
+
+/* PARAGRAF */
+
+.overview-content p,
+.history-section p {
+    color: #655746;
+    font-size: 14px;
+    line-height: 1.9;
+    text-align: justify;
+    margin-bottom: 16px;
+}
+
+/* =================================
+   SEJARAH KOTA PALU
+================================= */
+
+.history-section {
+    padding: 60px 0 75px;
+    background: #FFFFFF;
+}
+
+.history-image {
+    background: #FFFFFF;
+    padding: 10px;
+    border-radius: 18px;
+    border: 1px solid #EFE2CC;
+    box-shadow: 0 10px 30px rgba(80, 45, 15, 0.12);
+    transition: 0.4s ease;
+}
+
+.history-image:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(80, 45, 15, 0.18);
+}
+
+.history-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.history-caption {
+    padding: 14px 8px 5px;
+    color: #8B4513;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 991px) {
+    .profile-overview,
+    .history-section {
+        padding: 45px 0;
+    }
+
+    .overview-image img,
+    .history-image img {
+        height: 300px;
+    }
+
+    .overview-content h2,
+    .history-section h2 {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 576px) {
+    .profile-overview,
+    .history-section {
+        padding: 35px 0;
+    }
+
+    .overview-image img,
+    .history-image img {
+        height: 240px;
+    }
+
+    .overview-content h2,
+    .history-section h2 {
+        font-size: 23px;
+    }
+
+    .overview-content p,
+    .history-section p {
+        font-size: 13px;
+    }
+}
+
+
+
+
+/* =================================
+   KONDISI GEOGRAFIS KOTA PALU
+================================= */
+
+.geography-section {
+    padding: 70px 0;
+    background: linear-gradient(
+        135deg,
+        #F8F0DF 0%,
+        #F5E8CE 50%,
+        #F9F2E5 100%
+    );
+}
+
+/* =================================
+   JUDUL SECTION
+================================= */
+
+.geography-section .section-heading {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.geography-section .section-heading h2 {
+    color: #8B4513;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.geography-section .section-heading h2::after {
+    content: "";
+    display: block;
+    width: 75px;
+    height: 4px;
+    margin: 12px auto 0;
+    border-radius: 10px;
+    background: linear-gradient(
+        90deg,
+        #8B4513,
+        #DAA520
+    );
+}
+
+.geography-section .section-heading p {
+    color: #655746;
+    font-size: 14px;
+}
+
+/* =================================
+   KARTU GEOGRAFIS
+================================= */
+
+.geography-card {
+    background: #FFFFFF;
+    padding: 32px 23px;
+    border-radius: 15px;
+    height: 100%;
+    text-align: center;
+    border: 1px solid #EFE2CC;
+    box-shadow: 0 5px 18px rgba(80,45,15,0.08);
+    transition: 0.3s ease;
+}
+
+.geography-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(80,45,15,0.15);
+}
+
+/* =================================
+   IKON GEOGRAFIS
+================================= */
+
+.geography-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFF2D2;
+    color: #DAA520;
+    border-radius: 50%;
+    font-size: 29px;
+}
+
+.geography-icon i {
+    display: inline-block;
+    font-size: 29px;
+    line-height: 1;
+}
+
+/* IKON KHUSUS TOPOGRAFI */
+
+.geography-icon .topography-icon {
+    color: #DAA520;
+    font-size: 30px;
+}
+
+/* =================================
+   JUDUL KARTU
+================================= */
+
+.geography-card h5 {
+    color: #8B4513;
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+/* =================================
+   DESKRIPSI
+================================= */
+
+.geography-card p {
+    color: #655746;
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* =================================
+   PETA WILAYAH
+================================= */
+
+.geography-map {
+    position: relative;
+    margin-top: 35px;
+    background: #FFFFFF;
+    padding: 15px;
+    border: 1px solid #EFE2CC;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(80,45,15,0.09);
+}
+
+.geography-map img {
+    display: block;
+    width: 100%;
+    height: 380px;
+    object-fit: contain;
+    border-radius: 10px;
+    background: #FFFFFF;
+}
+
+/* =================================
+   KETERANGAN PETA
+================================= */
+
+.geography-map-caption {
+    padding: 15px 10px 5px;
+    color: #8B4513;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.geography-map-caption i {
+    color: #DAA520;
+    margin-right: 7px;
+}
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 991px) {
+    .geography-section {
+        padding: 50px 0;
+    }
+
+    .geography-section .section-heading h2 {
+        font-size: 27px;
+    }
+
+    .geography-map img {
+        height: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .geography-section {
+        padding: 40px 0;
+    }
+
+    .geography-section .section-heading h2 {
+        font-size: 23px;
+    }
+
+    .geography-card {
+        padding: 25px 18px;
+    }
+
+    .geography-map img {
+        height: 230px;
+    }
+}
+
+
+/* =================================
+   WILAYAH ADMINISTRATIF
+================================= */
+
+.administrative-section {
+    padding: 70px 0;
+    background: #FFFFFF;
+}
+
+.admin-label {
+    display: inline-block;
+    color: #DAA520;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.admin-summary-card {
+    background: #F7F0E3;
+    border-radius: 12px;
+    padding: 25px 15px;
+    text-align: center;
+    height: 100%;
+    box-shadow: 0 4px 15px rgba(80,45,15,0.07);
+    transition: 0.3s;
+}
+
+.admin-summary-card:hover {
+    transform: translateY(-5px);
+}
+
+.admin-summary-card i {
+    display: block;
+    font-size: 32px;
+    color: #DAA520;
+    margin-bottom: 12px;
+}
+
+.admin-summary-card h3 {
+    color: #8B4513;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.admin-summary-card p {
+    color: #655746;
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+/* TABEL */
+
+.admin-table-wrapper {
+    background: #FFFFFF;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(80,45,15,0.08);
+    margin-bottom: 55px;
+    border: 1px solid #E9DFC9;
+}
+
+.admin-table-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+    background: #8B4513;
+    color: #FFFFFF;
+}
+
+.admin-table-heading h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.admin-table-heading p {
+    font-size: 13px;
+    margin-bottom: 0;
+    color: #F5E6D0;
+}
+
+.admin-table-heading i {
+    font-size: 35px;
+    color: #DAA520;
+}
+
+.admin-table {
+    margin-bottom: 0;
+}
+
+.admin-table thead th {
+    background: #DAA520;
+    color: #000000;
+    padding: 15px;
+    font-size: 14px;
+    border: none;
+    white-space: nowrap;
+}
+
+.admin-table tbody td {
+    padding: 13px 15px;
+    color: #555555;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.admin-table tbody tr:nth-child(even) {
+    background: #F7F0E3;
+}
+
+.admin-table tbody tr:hover {
+    background: #F3E3BD;
+}
+
+.admin-table tfoot th {
+    background: #8B4513;
+    color: #FFFFFF;
+    padding: 15px;
+    border: none;
+    white-space: nowrap;
+}
+
+.admin-source {
+    padding: 15px 20px;
+    color: #777777;
+    font-size: 12px;
+    background: #FAFAFA;
+}
+
+/* DAFTAR KELURAHAN */
+
+.kelurahan-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.kelurahan-heading h3 {
+    color: #8B4513;
+    font-size: 26px;
+    font-weight: 800;
+}
+
+.kelurahan-heading p {
+    color: #655746;
+    font-size: 14px;
+}
+
+/* ACCORDION */
+
+.admin-accordion .accordion-item {
+    border: none;
+    border-radius: 10px !important;
+    overflow: hidden;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 12px rgba(80,45,15,0.07);
+}
+
+.admin-accordion .accordion-button {
+    background: #F7F0E3;
+    color: #8B4513;
+    padding: 19px 22px;
+    font-weight: 700;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.admin-accordion .accordion-button:not(.collapsed) {
+    background: #8B4513;
+    color: #FFFFFF;
+}
+
+.admin-accordion .accordion-button::after {
+    margin-left: 10px;
+}
+
+.district-area {
+    margin-left: auto;
+    font-size: 12px;
+    color: #8B4513;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.admin-accordion .accordion-button:not(.collapsed)
+.district-area {
+    color: #F5E6D0;
+}
+
+.admin-accordion .accordion-body {
+    background: #FFFFFF;
+    padding: 22px;
+}
+
+/* GRID KELURAHAN */
+
+.kelurahan-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.kelurahan-item {
+    background: #F7F0E3;
+    padding: 14px 16px;
+    border-radius: 8px;
+    color: #555555;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.kelurahan-item strong {
+    color: #8B4513;
+}
+
+.kelurahan-item span {
+    color: #8B4513;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.area-note {
+    background: #F3E3BD;
+    padding: 14px;
+    margin-top: 18px;
+    border-left: 4px solid #DAA520;
+    color: #655746;
+    font-size: 13px;
+    border-radius: 5px;
+}
+
+.area-note strong {
+    color: #8B4513;
+}
+
+.admin-note {
+    background: #F7F0E3;
+    border-left: 4px solid #DAA520;
+    border-radius: 8px;
+    padding: 18px;
+    margin-top: 25px;
+    color: #655746;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.admin-note i {
+    color: #DAA520;
+    margin-right: 7px;
+}
+
+/* =================================
+   TOMBOL MENU PETA SIG
+================================= */
+
+.profile-map-cta {
+    padding: 55px 0;
+    background: linear-gradient(
+        120deg,
+        #8B4513,
+        #DAA520
+    );
+}
+
+.map-cta-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.map-cta-content span {
+    color: #F5F5F5;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.map-cta-content h2 {
+    color: #FFFFFF;
+    font-size: 30px;
+    font-weight: 800;
+    margin: 10px 0;
+}
+
+.map-cta-content p {
+    color: #FFFFFF;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.map-cta-button {
+    display: inline-block;
+    background: #000000;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 13px 22px;
+    border-radius: 8px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+.map-cta-button:hover {
+    background: #FFFFFF;
+    color: #8B4513;
+}
+
+
+/* =================================
+   RESPONSIVE PROFIL
+================================= */
+
+@media (max-width: 991px) {
+
+    .profile-hero h1 {
+        font-size: 38px;
+    }
+
+    .overview-image img {
+        height: 300px;
+    }
+
+    .map-cta-content h2 {
+        font-size: 25px;
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    .profile-hero {
+        padding: 55px 0;
+    }
+
+    .profile-hero h1 {
+        font-size: 32px;
+    }
+
+    .profile-hero p {
+        font-size: 14px;
+    }
+
+    .profile-overview,
+    .history-section,
+    .geography-section,
+    .administrative-section,
+    .vision-section,
+    .leadership-section {
+        padding: 45px 0;
+    }
+
+    .overview-image img {
+        height: 240px;
+    }
+
+    .overview-content h2,
+    .history-section h2 {
+        font-size: 25px;
+    }
+
+    .profile-stat-card h3 {
+        font-size: 23px;
+    }
+
+    .geography-map img {
+        height: 230px;
+    }
+
+    .admin-table-heading {
+        padding: 18px;
+    }
+
+    .admin-table-heading h4 {
+        font-size: 16px;
+    }
+
+    .admin-table thead th,
+    .admin-table tbody td {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .admin-summary-card h3 {
+        font-size: 19px;
+    }
+
+    .admin-accordion .accordion-button {
+        padding: 15px;
+        font-size: 13px;
+        flex-wrap: wrap;
+    }
+
+    .district-area {
+        font-size: 11px;
+    }
+
+    .kelurahan-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .vision-placeholder {
+        padding: 25px 18px;
+    }
+
+    .leader-photo {
+        height: 300px;
+    }
+
+    .map-cta-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .map-cta-content h2 {
+        font-size: 24px;
+    }
+
+}
+/* =================================
+   JUDUL BERITA TERKINI
+================================= */
+
+.news-section .section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.news-section .section-heading h2 {
+    color: #8B4513;
+    font-size: 32px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.news-section .section-heading h2::after {
+    content: "";
+    display: block;
+    width: 75px;
+    height: 4px;
+    background-color: #DAA520;
+    border-radius: 10px;
+    margin: 13px auto 0;
+}
+
+.news-section .section-heading p {
+    color: #655746;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 12px;
+    margin-bottom: 0;
+}
+
+@media (max-width: 576px) {
+    .news-section .section-heading h2 {
+        font-size: 24px;
+    }
+
+    .news-section .section-heading p {
+        font-size: 13px;
+    }
+}
+/* =================================
+   JUDUL PARIWISATA DAN DESTINASI
+================================= */
+
+.tourism-section .section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.tourism-section .section-heading h2 {
+    color: #8B4513;
+    font-size: 32px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+/* GARIS AKSEN EMAS */
+
+.tourism-section .section-heading h2::after {
+    content: "";
+    display: block;
+    width: 75px;
+    height: 4px;
+    background-color: #DAA520;
+    border-radius: 10px;
+    margin: 13px auto 0;
+}
+
+/* SUBJUDUL */
+
+.tourism-section .section-heading p {
+    color: #655746;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 12px;
+    margin-bottom: 0;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 576px) {
+    .tourism-section .section-heading h2 {
+        font-size: 24px;
+    }
+
+    .tourism-section .section-heading p {
+        font-size: 13px;
+    }
+}
+/* JUDUL WILAYAH ADMINISTRATIF */
+
+.administrative-section .section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.administrative-section .section-heading h2 {
+    color: #8B4513;
+    font-size: 32px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.administrative-section .section-heading h2::after {
+    content: "";
+    display: block;
+    width: 75px;
+    height: 4px;
+    margin: 12px auto 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #8B4513, #DAA520);
+}
+
+.administrative-section .section-heading p {
+    color: #655746;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* KARTU POTENSI BISA DIKLIK */
+
+a.potential-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+a.potential-card:hover {
+    color: inherit;
+}
+
+/* ==========================================
+   TAMBAHAN STYLE SEMBILAN ASPEK PROFIL
+========================================== */
+
+.potensi-detail {
+    padding: 65px 0;
+    background: #F7F0E3;
+    scroll-margin-top: 90px;
+}
+
+.potensi-detail:nth-of-type(even) {
+    background: #FFFFFF;
+}
+
+.potensi-heading {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.potensi-heading h2 {
+    color: #8B4513;
+    font-size: 30px;
+    font-weight: 800;
+    margin: 12px 0;
+}
+
+.potensi-heading p {
+    color: #655746;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.data-card {
+    background: #FFFFFF;
+    padding: 28px 18px;
+    height: 100%;
+    text-align: center;
+    border-radius: 13px;
+    box-shadow: 0 4px 15px rgba(80,45,15,.09);
+    transition: .3s;
+}
+
+.data-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(80,45,15,.15);
+}
+
+.data-card i {
+    display: block;
+    color: #DAA520;
+    font-size: 32px;
+    margin-bottom: 14px;
+}
+
+.data-card h3 {
+    color: #8B4513;
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.data-card p {
+    color: #655746;
+    font-size: 14px;
+    margin: 0;
+}
+
+.data-table-box {
+    background: #FFFFFF;
+    padding: 25px;
+    border-radius: 13px;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(80,45,15,.07);
+}
+
+.data-table-box h4 {
+    color: #8B4513;
+    font-size: 21px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.data-subtitle {
+    color: #777777;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.data-table-box .table {
+    margin-bottom: 0;
+    min-width: 500px;
+}
+
+.data-table-box .table thead th {
+    background: #DAA520;
+    color: #000000;
+    padding: 13px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.data-table-box .table tbody td {
+    padding: 12px;
+    color: #444444;
+    font-size: 14px;
+    text-align: center;
+}
+
+.data-table-box .table tbody td:first-child {
+    text-align: left;
+}
+
+.data-table-box .table tbody tr:hover {
+    background: #F7F0E3;
+}
+
+.data-table-box .table tbody th {
+    color: #8B4513;
+}
+
+.data-source {
+    color: #777777;
+    font-size: 12px;
+    margin-top: 16px;
+    font-style: italic;
+}
+
+.regulasi-card {
+    height: 100%;
+    padding: 30px;
+    background: #FFFFFF;
+    border: 1px solid #E9DFCE;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(80,45,15,.08);
+    transition: .3s;
+}
+
+.regulasi-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 22px rgba(80,45,15,.14);
+}
+
+.regulasi-icon {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: #F7F0E3;
+    color: #8B4513;
+    font-size: 27px;
+    margin-bottom: 18px;
+}
+
+.regulasi-tag {
+    display: inline-block;
+    background: #F3E4C5;
+    color: #8B4513;
+    padding: 6px 13px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.regulasi-card h3 {
+    color: #8B4513;
+    font-size: 21px;
+    font-weight: 800;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.regulasi-card p {
+    color: #655746;
+    font-size: 14px;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.regulasi-link {
+    display: inline-block;
+    padding: 11px 17px;
+    background: #8B4513;
+    color: #FFFFFF;
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.regulasi-link:hover {
+    background: #DAA520;
+    color: #000000;
+}
+
+.regulasi-text-link {
+    color: #8B4513;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.tata-ruang-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 20px;
+    background: #F7F0E3;
+    border-left: 4px solid #DAA520;
+    border-radius: 8px;
+}
+
+.tata-ruang-note i {
+    color: #8B4513;
+    font-size: 20px;
+}
+
+.tata-ruang-note p {
+    color: #655746;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .potensi-detail {
+        padding: 45px 0;
+    }
+
+    .potensi-heading h2 {
+        font-size: 24px;
+    }
+
+    .data-table-box {
+        padding: 17px;
+    }
+
+    .regulasi-card {
+        padding: 22px;
+    }
+}
+
+/* INDUSTRI DAN PERTAMBANGAN */
+
+.industry-subheading {
+    color: #8B4513;
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 22px;
+    padding-left: 13px;
+    border-left: 5px solid #DAA520;
+}
+
+.industry-sources {
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 22px;
+}
+
+.industry-sources h5 {
+    color: #8B4513;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.industry-sources ul {
+    margin-bottom: 0;
+    padding-left: 20px;
+}
+
+.industry-sources li {
+    color: #655746;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.industry-sources a {
+    color: #8B4513;
+    text-decoration: none;
+}
+
+.industry-sources a:hover {
+    color: #DAA520;
+    text-decoration: underline;
+}
